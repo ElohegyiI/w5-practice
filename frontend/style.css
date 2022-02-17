@@ -1,0 +1,37 @@
+/*#root {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+ #root .card {
+     flex-basis: 33%;
+     
+     border: 1px solid black;
+     
+
+ }*/
+
+ #root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+ 
+ body {
+    background-color: rgb(223, 166, 91);
+}
+
+#root .card {
+    display: flex;
+    flex-basis: calc(33% - 10px);
+    flex-direction: column;
+    border: 1px solid #000;
+    background-color: rgb(226, 159, 71);;
+}

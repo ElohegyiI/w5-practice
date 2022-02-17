@@ -99,11 +99,80 @@ let f = multiplyByTwo(1)
     }
     window.addEventListener("load", loadEvent)*/
 
-    let h = {
+    /*let h = {
         anotherMethod: function(text){
             return `You sent the following argument to this method: ${text}`
         }
     }
     let i = h.anotherMethod("argument")
     console.log(i);
-    console.log(h.anotherMethod("another argument"));
+    console.log(h.anotherMethod("another argument"));*/
+
+
+    /*let myString = "mikkamakka";
+
+    let mySecondString = myString;
+
+    let myThirdString = "mikkamakka";
+
+    console.log(myString);
+    console.log(mySecondString);
+    console.log(myString === mySecondString);
+    console.log(myString ===  myThirdString);*/
+
+    /*let myObject = {
+        myString: "mikkamakka"
+    }
+    console.log(myObject.myString)
+
+    let mySecondObject = myObject;
+
+    let myThirdObject = {
+        myString: "mikkamakka"
+    }
+
+    /*console.log(myObject === mySecondObject);
+    console.log(myObject === myThirdObject);
+
+
+    console.log("" === "");
+
+    console.log("a" === "a");
+    console.log({} === {});*/
+
+    /*mySecondObject.myString = "dömdödöm"
+
+    console.log(myObject.myString)
+
+    let myFourthObject = {...myObject}
+    
+    myFourthObject.myString === "Vacskamati"
+    console.log(myFourthObject.myString)*/
+
+    /*window.addEventListener("load", function(){
+        console.log("Ez megjött.")
+    })*/
+
+  function loadEvent()  {
+    console.log("Ez is.");
+    let rootElement = document.getElementById("root");
+    let card = function(movieReceived) {
+        return`
+        <div class="card">
+           <h2>${movieReceived.title}</h2>
+           <span>${movieReceived.year}</span>
+           <em>${movieReceived.rate}</em>
+        </div>
+    
+        `;
+    };
+
+    
+
+    for (const movieSend of movies) {
+         rootElement.insertAdjacentHTML("beforeend", card(movieSend));
+              
+    } 
+    console.log(movies);
+}
+  window.addEventListener("load", loadEvent)
