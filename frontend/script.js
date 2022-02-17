@@ -1,178 +1,58 @@
-/*console.log(a)
-console.log(c)
-console.log("Hello")
-console.log('Sima')
-console.log(`Back
-tick`)
 
 
-console.log(typeof 2)
-console.log(typeof NaN)
-console.log(0/0)
-console.log(2.14)
-
-console.log(true)
-console.log(false)
-console.log(undefined)
-console.log(null)
-
-console.log(typeof undefined)
-console.log(typeof null)
-
-/*console.log({
-    title: "Start coding",
-    type: "solo",
-    difficulty: 4.1,
-    usefulness: 4.2,
-    enjoyability: 3.7,
-    materials: 3.4,
-    tasks: [
-        {
-        title: "Bank accounts",
-        description: ""
-        }
-        {
-        title: "100 doors",
-        description:""
-        }
-        {
-        title: "Word filter"
-        description:""
-        }
-    ]
-
-})
-*/
-
-/*var a = "hello"
-let b = "hello2"
-const c = "hello3"
-
-console.log(a)
-console.log(b)
-console.log(c)*/
-
-
-/*function d() {
-    if (1+1 === 2){
-        
-    }
-    var a = "hello"
-    let b = "hello2"
-    const c = "hello3"  
-    console.log(a)
-    console.log(b)
-    console.log(c)
-}
-d()*/
-
-
-/*let e = 1
-console.log(e)
-e = 2
-console.log(e)
-e = e*2
-console.log(e)*/
-
-/*function multiplyByTwo(num) {
-    console.log(num)
-    return num*2
-}
-let f = multiplyByTwo(1)
-    console.log(f)
-    console.log(multiplyByTwo(1));
-    console.log(num);*/
-
-    /*let g = {
-        myMethod: function() {
-            console.log("Hello")
-        }
-    }
-    g.myMethod()*/
-
-    /*let window ={
-        addEventListener: function (eventName, eventFunction) {
-            if ( eventName === "load") {
-                eventFunction()
-            }
-        }
-    }
-    window.addEventListener("load", loadEvent)*/
-
-    /*let h = {
-        anotherMethod: function(text){
-            return `You sent the following argument to this method: ${text}`
-        }
-    }
-    let i = h.anotherMethod("argument")
-    console.log(i);
-    console.log(h.anotherMethod("another argument"));*/
-
-
-    /*let myString = "mikkamakka";
-
-    let mySecondString = myString;
-
-    let myThirdString = "mikkamakka";
-
-    console.log(myString);
-    console.log(mySecondString);
-    console.log(myString === mySecondString);
-    console.log(myString ===  myThirdString);*/
-
-    /*let myObject = {
-        myString: "mikkamakka"
-    }
-    console.log(myObject.myString)
-
-    let mySecondObject = myObject;
-
-    let myThirdObject = {
-        myString: "mikkamakka"
-    }
-
-    /*console.log(myObject === mySecondObject);
-    console.log(myObject === myThirdObject);
-
-
-    console.log("" === "");
-
-    console.log("a" === "a");
-    console.log({} === {});*/
-
-    /*mySecondObject.myString = "dömdödöm"
-
-    console.log(myObject.myString)
-
-    let myFourthObject = {...myObject}
-    
-    myFourthObject.myString === "Vacskamati"
-    console.log(myFourthObject.myString)*/
-
-    /*window.addEventListener("load", function(){
-        console.log("Ez megjött.")
-    })*/
-
-  function loadEvent()  {
+  function loadEvent() {  
     console.log("Ez is.");
+    
     let rootElement = document.getElementById("root");
-    let card = function(movieReceived) {
+    
+    let card = function(title, year, rate) {
+        
         return`
         <div class="card">
-           <h2>${movieReceived.title}</h2>
-           <span>${movieReceived.year}</span>
-           <em>${movieReceived.rate}</em>
+           <h2>${title}</h2>
+           <span>${year}</span>
+           <em>${rate}</em>
         </div>
-    
+        
         `;
     };
 
-    
+    /*movies.sort(function(a, b){return a.year - b.year});*/
+
+    let renderAllCardElements = function(incomingMoviesArray) {
+        let renderedCardList = `<div class=cards>`;
+        /*for ciklus végigmegy a cardsarrayen
+         minden lépcsőjénél hozzáadja renderlistcardhoz az adott elemet a megfelelő div cardhoz*/
+        
+        for (const incomingMovie of incomingMoviesArray) {
+            renderedCardList += card(incomingMovie.title,incomingMovie.year, incomingMovie.rate)
+            /* renderedCardList +=`
+                <div class="cardarray">
+                    <h2>${incomingMovie.title}</h2>
+                    <span>${incomingMovie.year}</span>
+                    <span>${incomingMovie.rate}</span>
+                    </div>
+            ` */
+        }
+        renderedCardList += `</div>`
+
+        console.log(renderedCardList)
+        return renderedCardList
+    }
+    let newGoodMovies = [];
 
     for (const movieSend of movies) {
-         rootElement.insertAdjacentHTML("beforeend", card(movieSend));
-              
-    } 
-    console.log(movies);
-}
-  window.addEventListener("load", loadEvent)
+        
+        if (movieSend.year > 2000 && movieSend.rate > 8) {
+            newGoodMovies.push(movieSend)
+            /*rootElement.insertAdjacentHTML("beforeend", card(movieSend.title, movieSend.year, floorRate));*/
+        }
+    }
+        newGoodMovies.sort(function(a, b){return a.year - b.year});
+        
+        rootElement.insertAdjacentHTML("beforeend", renderAllCardElements(newGoodMovies));
+    }
+
+
+
+    window.addEventListener("load", loadEvent)
