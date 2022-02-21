@@ -70,12 +70,12 @@
       sect.appendChild(divs);
 
 
-     divs.insertAdjacentHTML("beforeend", `
-      <div class="card">
-        <time datetime="YYYY">${thisYear}</time>
-        <time datetime="MM">${month.name}</time>
-        
-      </div>
+      divs.insertAdjacentHTML("beforeend", `
+        <div class="card">
+          <time datetime="YYYY">${thisYear}</time>
+          <time datetime="MM">${month.name}</time>
+          
+        </div>
 
       `);
 
