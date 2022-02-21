@@ -35,3 +35,8 @@
     border: 1px solid #000;
     background-color: rgb(226, 159, 71);;
 }
+
+section {
+    height: 100vh;
+    width: 100%;
+}

@@ -1,178 +1,122 @@
-/*console.log(a)
-console.log(c)
-console.log("Hello")
-console.log('Sima')
-console.log(`Back
-tick`)
 
 
-console.log(typeof 2)
-console.log(typeof NaN)
-console.log(0/0)
-console.log(2.14)
+  let months = [{
+    "name": "January",
+    "days": 31
+  },
+  {
+    "name": "February",
+    "days": 28
+  },
+  {
+    "name": "March",
+    "days": 31
+  },
+  {
+    "name": "April",
+    "days": 30
+  },
+  {
+    "name": "May",
+    "days": 31
+  },
+  {
+    "name": "June",
+    "days": 30
+  },
+  {
+    "name": "July",
+    "days": 31
+  },
+  {
+    "name": "August",
+    "days": 31
+  },
+  {
+    "name": "September",
+    "days": 31
+  },
+  {
+    "name": "October",
+    "days": 31
+  },
+  {
+    "name": "November",
+    "days": 30
+  },
+  {
+    "name": "December",
+    "days": 31
+  }]
 
-console.log(true)
-console.log(false)
-console.log(undefined)
-console.log(null)
+  
+  function loadEvent() {
+    
+    for (const month of months) {
+      
+      let thisYear = 2022;
 
-console.log(typeof undefined)
-console.log(typeof null)
+      let sect = document.getElementById('root');
 
-/*console.log({
-    title: "Start coding",
-    type: "solo",
-    difficulty: 4.1,
-    usefulness: 4.2,
-    enjoyability: 3.7,
-    materials: 3.4,
-    tasks: [
-        {
-        title: "Bank accounts",
-        description: ""
-        }
-        {
-        title: "100 doors",
-        description:""
-        }
-        {
-        title: "Word filter"
-        description:""
-        }
-    ]
+      let divs = document.createElement('div');
+      
+      let division = document.getElementById(month.name)
+      
+      sect.insertAdjacentHTML("beforeend", `
+        <section id="${month.name}"></section>
+      
+      `);  
 
-})
-*/
-
-/*var a = "hello"
-let b = "hello2"
-const c = "hello3"
-
-console.log(a)
-console.log(b)
-console.log(c)*/
+      sect.appendChild(divs);
 
 
-/*function d() {
-    if (1+1 === 2){
+     divs.insertAdjacentHTML("beforeend", `
+      <div class="card">
+        <time datetime="YYYY">${thisYear}</time>
+        <time datetime="MM">${month.name}</time>
         
-    }
-    var a = "hello"
-    let b = "hello2"
-    const c = "hello3"  
-    console.log(a)
-    console.log(b)
-    console.log(c)
-}
-d()*/
+      </div>
 
+      `);
 
-/*let e = 1
-console.log(e)
-e = 2
-console.log(e)
-e = e*2
-console.log(e)*/
+      /*if (month.days === 31) {
+        for(let i = 0; i < 31; i++){
 
-/*function multiplyByTwo(num) {
-    console.log(num)
-    return num*2
-}
-let f = multiplyByTwo(1)
-    console.log(f)
-    console.log(multiplyByTwo(1));
-    console.log(num);*/
-
-    /*let g = {
-        myMethod: function() {
-            console.log("Hello")
+          divs.insertAdjacentHTML("beforeend", `
+            <div class="card">
+              <time datetime="YYYY">${thisYear}</time>
+              <time datetime="MM">${month.name}</time>
+              <time datetime="DD">${i+1}</time>
+            </div>
+          `)
         }
-    }
-    g.myMethod()*/
+      } elseif (month.days === 28); {
+          for(let i = 0; i < 28; i++){  
+            divs.insertAdjacentHTML("beforeend", `
+              <div class="card">
+                <time datetime="YYYY">${thisYear}</time>
+                <time datetime="MM">${month.name}</time>
+                <time datetime="DD">${i+1}</time>
+              </div>
+              `)
+          }
+      } else {
+          for(let i = 0; i < 30; i++) {
+            divs.insertAdjacentHTML("beforeend", `
+              <div class="card">
+                <time datetime="YYYY">${thisYear}</time>
+                <time datetime="MM">${month.name}</time>
+                <time datetime="DD">${i+1}</time>
+              </div>
 
-    /*let window ={
-        addEventListener: function (eventName, eventFunction) {
-            if ( eventName === "load") {
-                eventFunction()
-            }
-        }
-    }
-    window.addEventListener("load", loadEvent)*/
-
-    /*let h = {
-        anotherMethod: function(text){
-            return `You sent the following argument to this method: ${text}`
-        }
-    }
-    let i = h.anotherMethod("argument")
-    console.log(i);
-    console.log(h.anotherMethod("another argument"));*/
-
-
-    /*let myString = "mikkamakka";
-
-    let mySecondString = myString;
-
-    let myThirdString = "mikkamakka";
-
-    console.log(myString);
-    console.log(mySecondString);
-    console.log(myString === mySecondString);
-    console.log(myString ===  myThirdString);*/
-
-    /*let myObject = {
-        myString: "mikkamakka"
-    }
-    console.log(myObject.myString)
-
-    let mySecondObject = myObject;
-
-    let myThirdObject = {
-        myString: "mikkamakka"
-    }
-
-    /*console.log(myObject === mySecondObject);
-    console.log(myObject === myThirdObject);
-
-
-    console.log("" === "");
-
-    console.log("a" === "a");
-    console.log({} === {});*/
-
-    /*mySecondObject.myString = "dömdödöm"
-
-    console.log(myObject.myString)
-
-    let myFourthObject = {...myObject}
-    
-    myFourthObject.myString === "Vacskamati"
-    console.log(myFourthObject.myString)*/
-
-    /*window.addEventListener("load", function(){
-        console.log("Ez megjött.")
-    })*/
-
-  function loadEvent()  {
-    console.log("Ez is.");
-    let rootElement = document.getElementById("root");
-    let card = function(movieReceived) {
-        return`
-        <div class="card">
-           <h2>${movieReceived.title}</h2>
-           <span>${movieReceived.year}</span>
-           <em>${movieReceived.rate}</em>
-        </div>
-    
-        `;
-    };
-
-    
-
-    for (const movieSend of movies) {
-         rootElement.insertAdjacentHTML("beforeend", card(movieSend));
-              
+          `);
+          }
+        }*/
     } 
-    console.log(movies);
-}
-  window.addEventListener("load", loadEvent)
+  }
+window.addEventListener("load", loadEvent);
+
+/*window.addEventListener("load", function(){
+    console.log("My second function")
+})*/
+
